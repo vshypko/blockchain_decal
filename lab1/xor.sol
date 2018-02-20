@@ -6,9 +6,7 @@ contract Xor {
         bytes memory _num2 = bytes(num2);
         bytes memory xored = new bytes(_num1.length);
 
-        if (_num1.length != _num2.length) {
-            return;
-        }
+        require(_num1.length == _num2.length);
 
         for (uint i = 0; i < _num1.length; i ++) {
             if (((_num1[i] == "0") && (_num2[i] == "0"))
