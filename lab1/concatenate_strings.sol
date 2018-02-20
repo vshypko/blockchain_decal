@@ -1,3 +1,5 @@
+pragma solidity ^0.4.20;
+
 import "github.com/Arachnid/solidity-stringutils/strings.sol";
 
 contract ConcatenateStrings {

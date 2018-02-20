@@ -1,23 +1,24 @@
-pragma solidity ^0.4.10;
+pragma solidity ^0.4.20;
 
 contract Fibonacci {
-    
     int n;
-    
+
     function Fibonacci(int _n) public {
         n = _n;
     }
-    
+
+    // assuming the sequence starts at 0
     function fibonacci() public view returns (int) {
-        int a = 0;
-        int b = 1;
-        int c;
-        for (int i = 0; i < n; ++i) {
-            c = b;
-            b = a + b;
-            a = b;
+        int secondToLast = 0;
+        int last = 1;
+        int result;
+
+        for (int i = 0; i < n - 2; ++i) {
+            result = secondToLast + last;
+            secondToLast = last;
+            last = result;
         }
-        
-        return a;
+
+        return result;
     }
 }
