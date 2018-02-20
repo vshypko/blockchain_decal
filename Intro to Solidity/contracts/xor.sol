@@ -1,6 +1,7 @@
-pragma solidity ^0.4.20;
+pragma solidity 0.4.19;
 
-contract Xor {
+
+contract XOR {
     function xor(string num1, string num2) public returns (string) {
         bytes memory _num1 = bytes(num1);
         bytes memory _num2 = bytes(num2);
